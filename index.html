@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icons8-books-cute-color-32.png" type="image/png">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="assets/icons8-books-cute-color-32.png" alt="Library Icon featuring colorful books" class="icon">
+        <h1>Library</h1>
+        <button class="login-btn" aria-label="Log in to the Library App">Log in</button>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <p id="add-book" class="clickable" aria-label="Add a new book">+ Add Book</p>
+        
+        <!-- Add Book Modal -->
+        <div class="modal" id="addBookModal">
+            <form class="add-book-form" id="new-book-form">
+                <h3>Add New Book</h3>
+                <p class="error-msg" id="errorMsg" style="color: #ff0000;"></p>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Title"
+                    maxlength="100"
+                    required
+                />
+                <input
+                    type="text"
+                    id="author"
+                    placeholder="Author"
+                    maxlength="100"
+                    required
+                />
+                <input
+                    type="number"
+                    id="pages"
+                    placeholder="Number of Pages"
+                    max="10000"
+                    required
+                />
+                <div class="is-read">
+                    <label for="isRead">Have you read it?</label>
+                    <input type="checkbox" id="isRead" />
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+
+        <!-- Overlay for Modal -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Library Display -->
+        <div id="library"></div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Hussein Salim</p>
+        <a href="https://github.com/hussein-salim" target="_blank">
+            <img src="assets/icons8-github-30.png" alt="GitHub Icon" class="icon">
+        </a>
+    </footer>
+
+    <!-- Link to External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

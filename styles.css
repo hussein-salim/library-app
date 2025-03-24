@@ -1,0 +1,243 @@
+/* General Styles */
+html, body {
+    height: 100%; /* Full height for flex layout */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000; /* Pure black background */
+    color: #ffffff; /* Crisp white text */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #101010; /* Subtle black for contrast */
+    border-bottom: 1px solid #333333;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff; /* Bright white text */
+}
+
+header .login-btn {
+    background-color: #333333; /* Dark gray for buttons */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header .login-btn:hover {
+    background-color: #555555; /* Lighter gray hover effect */
+    transform: scale(1.05); /* Subtle animation */
+}
+
+header .icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Ensure main content fills available space */
+    padding: 40px;
+    text-align: center;
+}
+
+main .clickable {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Clean white clickable text */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+main .clickable:hover {
+    text-decoration: underline;
+    color: #d0d0d0; /* Slightly softer white */
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #101010; /* Subtle black modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal.active {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black transparent overlay */
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer; /* Indicate that it's clickable */
+}
+
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Form Styling */
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-book-form h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.add-book-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #000000; /* Pure black input background */
+    color: #ffffff; /* White text for inputs */
+}
+
+.add-book-form input::placeholder {
+    color: #888888; /* Softer gray placeholder text */
+}
+
+.add-book-form button {
+    background-color: #333333; /* Dark gray for buttons */
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-book-form button:hover {
+    background-color: #555555;
+    transform: scale(1.05);
+}
+
+/* Library Grid */
+#library {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Book Cards */
+.book-card {
+    background-color: #101010; /* Subtle black card background */
+    border: 1px solid #333333; /* Dark gray border */
+    border-radius: 8px;
+    padding: 20px;
+    color: #ffffff; /* Crisp white text */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(255, 255, 255, 0.15);
+}
+
+.book-card button {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-card button:hover {
+    background-color: #555555;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: auto; /* Push footer to the bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #101010;
+    border-top: 1px solid #333333;
+}
+
+footer p {
+    margin: 0 10px 0 0;
+    font-size: 0.9rem;
+}
+
+footer .icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.2s ease;
+}
+
+footer .icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+}
+/* Define the spinning animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Optional: Transition for a smooth effect */
+footer .icon.spin {
+    animation: spin 1s linear;
+}
+footer .icon {
+    cursor: pointer;
+}
+footer .icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
